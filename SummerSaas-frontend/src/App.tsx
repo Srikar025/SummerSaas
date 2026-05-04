@@ -1,0 +1,20 @@
+import { Sidebar } from "./components/sidebar"
+import { Dashboard } from "./pages/dashboard"
+
+
+function App() {
+
+
+  return <div>
+    <Dashboard />
+
+  </div>
+
+
+
+
+
+
+}
+
+export default App
