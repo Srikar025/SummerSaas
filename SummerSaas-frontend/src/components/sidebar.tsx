@@ -6,47 +6,88 @@ import { SidebarItem } from "./sidebarItem";
 import logo from "../assets/logo2.png"
 import { LogoutIcon } from "../icons/LogoutIcon";
 import club from "../assets/club.png"
+import { BACKEND_URL } from "../config";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Card } from "./Card";
 
 
 export function Sidebar() {
-    return <div className="h-screen border-r border-white w-60 shadow-md ">
-        <div className=" container">
-            <div className="flex  items-center rounded  shadow-sm p-1 h-15 max-w-100">
-                <img src={logo} alt="my image" className="w-47 pl-5" />
+    const [isOpen, setisOpen] = useState(false);
+    const [content, setContent] = useState<any>(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(
+                    BACKEND_URL + "/api/v2/content",
+                    {
+                        headers: {
+                            Authorization: localStorage.getItem("token")
+                        }
+                    }
+                );
+
+                console.log("API Response:", res.data);
+
+                setContent(res.data.content);
+            }
+            catch (e) {
+                console.log(e);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    return <div className="flex items-start">
+        <div className="h-screen border-r border-white w-60 shadow-md ">
+            <div className="container">
+
+                <br />
+                <div>
+                    <div onClick={() => setisOpen(!isOpen)}>
+                        <SidebarItem title="Profile"
+                            icon={<ProfileIcon />}
+                        />
+                    </div>
+                    <br />
+
+                    <SidebarItem title="Team details"
+                        icon={<TeamIcon />}
+                    />
+                    <br />
+                    <SidebarItem title="Problem Statement"
+                        icon={<BulbIcon />}
+                    />
+                    <br />
+
+                    <SidebarItem title="Submissions"
+                        icon={<SettingsIcon />}
+                    />
+                    <br />
+                </div>
+                <div className=" mt-45 flex items-center pl-5 justify-center">
+                    <img src={club} alt="image" className="w-20 h-20" />
+                    <p className="text-orange-600">From Team <span className="text-red-950 font-bold">DevCatalyst</span></p>
+
+                </div>
+
+
+
+
+
             </div>
-            <br />
-            <div>
-                <SidebarItem title="Profile"
-                    icon={<ProfileIcon />}
-                />
-                <br />
-
-                <SidebarItem title="Team details"
-                    icon={<TeamIcon />}
-                />
-                <br />
-                <SidebarItem title="Problem Statement"
-                    icon={<BulbIcon />}
-                />
-                <br />
-
-                <SidebarItem title="Settings"
-                    icon={<SettingsIcon />}
-                />
-                <br />
-            </div>
-            <div className=" mt-45 flex items-center pl-5 justify-center">
-                <img src={club} alt="image" className="w-20 h-20" />
-                <p className="text-orange-600">From Team <span className="text-red-950 font-bold">DevCatalyst</span></p>
-
-            </div>
-
-
-
+        </div>
+        <div >
+            {content ? (
+                <Card data={content} isOpen={isOpen} />
+            ) : (
+                <p>Loading...</p>
+            )}
 
 
         </div>
 
 
-    </div >
+    </div>
 }

@@ -1,29 +1,40 @@
+import { useEffect, useState } from "react";
 import logo from "../assets/logo2.png"
+import { Card } from "../components/Card";
 import { Sidebar } from "../components/sidebar"
+import { Topbar } from "../components/topbar";
+import axios from "axios";
+import { BACKEND_URL } from "../config";
+
+
+
+
+
+
 
 export function Dashboard() {
-    return <div className="flex">
-        <Sidebar />
 
 
-        <div className="container flex  left-[30%] ">
-            <div className="flex justify-between shadow-md h-15 rounded-2xl top-0 left-[30%] absolute px-10">
 
-                <div className=" text-red-950  p-3 w-125  rounded m-1 flex justify-between">
-                    <div className="hover:text-red-600 transition-all duration-300 cursor-pointer " > Games </div>
-                    <div className="hover:text-red-600 transition-all duration-300 cursor-pointer ">Communtiy </div>
-                    <div className="hover:text-red-600 transition-all duration-300 cursor-pointer "> Posts </div>
-                    <div className="hover:text-red-600 transition-all duration-300 cursor-pointer "> Projects</div>
-                </div>
+    return (
+        <div>
+
+            <div>
+                <Topbar />
+
+            </div>
+            <div className="">
+                <Sidebar />
+
+
+
+
+            </div>
+            <div>
+
             </div>
 
+
         </div>
-
-
-
-
-
-    </div>
+    );
 }
-
-

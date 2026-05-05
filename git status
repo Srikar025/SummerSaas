@@ -1,0 +1,11 @@
+[33mcommit d34369ad3bdb1b2c59768762930f151bfb32e493[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Srikar Gadagoju <you@example.com>
+Date:   Tue May 5 08:14:42 2026 +0530
+
+    added login page
+
+[33mcommit ecc0c80b7ac0a1dfd568d207a8abe9c7c5eb7a10[m
+Author: Srikar Gadagoju <you@example.com>
+Date:   Mon May 4 16:47:20 2026 +0530
+
+    dashboard ,card, sidebar,sidebaritem

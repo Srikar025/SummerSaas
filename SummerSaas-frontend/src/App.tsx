@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Sidebar } from "./components/sidebar"
 import { Dashboard } from "./pages/dashboard"
 import { Signin } from "./pages/signin"
@@ -6,11 +7,12 @@ import { Signin } from "./pages/signin"
 function App() {
 
 
-  return <div>
-    <Signin />
-
-
-  </div>
+  return <BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<Signin />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  </BrowserRouter>
 
 
 
