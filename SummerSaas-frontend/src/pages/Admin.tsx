@@ -1,4 +1,4 @@
-import logo from "../assets/logo2.png"
+
 import { Sidebar } from "../components/sidebar"
 
 export function Dashboard() {
