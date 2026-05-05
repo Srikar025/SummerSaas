@@ -1,12 +1,14 @@
 import { Sidebar } from "./components/sidebar"
 import { Dashboard } from "./pages/dashboard"
+import { Signin } from "./pages/signin"
 
 
 function App() {
 
 
   return <div>
-    <Dashboard />
+    <Signin />
+
 
   </div>
 
