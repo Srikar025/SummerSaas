@@ -3,8 +3,7 @@ import { ProfileIcon } from "../icons/ProfileIcon";
 import { SettingsIcon } from "../icons/SettingIcon";
 import { TeamIcon } from "../icons/TeamIcon";
 import { SidebarItem } from "./sidebarItem";
-import logo from "../assets/logo2.png"
-import { LogoutIcon } from "../icons/LogoutIcon";
+
 import club from "../assets/club.png"
 import { BACKEND_URL } from "../config";
 import axios from "axios";

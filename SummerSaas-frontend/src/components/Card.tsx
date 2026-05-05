@@ -1,11 +1,11 @@
-import { useState } from "react";
+
 import { motion, AnimatePresence } from "framer-motion"
 
 interface CardProps {
     data: any
     isOpen: any
 }
-export function Card({ data, isOpen }) {
+export function Card({ data, isOpen }: CardProps) {
 
     return (<AnimatePresence mode="wait">
 
