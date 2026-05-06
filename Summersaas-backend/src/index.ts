@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://summer-saas-o1visosin-srikar025s-projects.vercel.app/",
+    origin: "https://summer-saas-o1visosin-srikar025s-projects.vercel.app",
     credentials: true
 }));
 
