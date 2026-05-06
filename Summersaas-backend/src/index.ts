@@ -9,7 +9,9 @@ import { userMiddleware } from "./middleware.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: ""
+}));
 
 app.post("/api/v2/login", async (req, res) => {
     const registrationid = req.body.registrationid;

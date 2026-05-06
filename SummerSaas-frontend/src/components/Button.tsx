@@ -9,7 +9,7 @@ interface ButtonProps {
     startIcon?: ReactElement;
     endIcon?: ReactElement;
     onClick?: () => void;
-    loading?: boolean;
+    disabled?: boolean;
 }
 const variantStyles = {
     "primary": "bg-opacity-5 text-indigo-600 cursor-pointer border border-white",
@@ -29,8 +29,13 @@ export const Button = (props: ButtonProps) => {
             {props.startIcon}
 
         </div>
+        {props.disabled ? (
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+        ) : (
+            props.text
+        )}
 
 
-        {props.text}
     </button>
 }
+

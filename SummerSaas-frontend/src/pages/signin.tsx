@@ -8,10 +8,12 @@ import { BACKEND_URL } from "../config.ts"
 import { useState } from "react";
 
 export function Signin() {
+    const [loading, setLoading] = useState(false);
     const [registrationid, setRegistrationid] = useState("");
     const navigate = useNavigate();
     const handleLogin = async () => {
         try {
+            setLoading(true);
             const reponse = await axios.post(BACKEND_URL + "/api/v2/login", {
                 registrationid
             });
@@ -22,6 +24,8 @@ export function Signin() {
 
         } catch (e) {
             alert("Invalid login credentials")
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -53,6 +57,7 @@ export function Signin() {
                 <br />
                 <div className="flex  justify-center p-2 py-2 ">
                     <Button
+                        disabled={loading}
                         onClick={handleLogin}
                         variant="secondary" size="lg" text="Get Started" />
                 </div>
