@@ -25,7 +25,7 @@ app.post("/api/v2/login", async (req, res) => {
 
     if (existinguser) {
         const token = jwt.sign(
-            { registrationid: existinguser.registrationid }, // ✅ FIX
+            { registrationid: existinguser.registrationid },
             JWT_PASSWORD
         );
 
@@ -52,7 +52,7 @@ app.get("/api/v2/content", userMiddleware, async (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log("Server running on port 3000 🚀");
+    console.log("Server running on port 3000");
 });
 
 

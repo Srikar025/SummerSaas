@@ -1,14 +1,8 @@
 
 
+import { GameCard } from "../components/GameCard";
 import { Sidebar } from "../components/sidebar"
 import { Topbar } from "../components/topbar";
-
-
-
-
-
-
-
 
 export function Dashboard() {
 
@@ -19,18 +13,18 @@ export function Dashboard() {
 
             <div>
                 <Topbar />
-
             </div>
-            <div className="">
-                <Sidebar />
+            <div className="flex items-start  ">
+                <div>
+                    <Sidebar />
+                </div>
 
+                <div className="m-5">
+                    <GameCard />
 
-
-
+                </div>
             </div>
-            <div>
 
-            </div>
 
 
         </div>
