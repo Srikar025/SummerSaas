@@ -81,7 +81,7 @@ export function Sidebar() {
             {content ? (
                 <Card data={content} isOpen={isOpen} />
             ) : (
-                <p>Loading...</p>
+                <p></p>
             )}
 
 
