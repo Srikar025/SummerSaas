@@ -1,16 +1,14 @@
 
 
-import { GameCard } from "../components/GameCard";
+
 import { Sidebar } from "../components/sidebar"
 import { Topbar } from "../components/topbar";
 
+
 export function Dashboard() {
 
-
-
     return (
-        <div>
-
+        <div className="relative">
             <div>
                 <Topbar />
             </div>
@@ -19,10 +17,7 @@ export function Dashboard() {
                     <Sidebar />
                 </div>
 
-                <div className="m-5">
-                    <GameCard />
 
-                </div>
             </div>
 
 

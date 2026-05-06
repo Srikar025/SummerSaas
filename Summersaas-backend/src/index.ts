@@ -8,7 +8,7 @@ import { userMiddleware } from "./middleware.js";
 
 
 const app = express();
-const allowedOrigins = ["http://localhost:5173", "https://summer-saas.vercel.app"];
+const allowedOrigins = ["http://localhost:5173"];
 app.use(express.json());
 app.use(cors({
     origin: allowedOrigins,
